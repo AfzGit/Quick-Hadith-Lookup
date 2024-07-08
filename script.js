@@ -1,5 +1,32 @@
 const site1 = "https://sunnah.com/";
 const site2 = "https://hadithhub.com/";
+const site3 = "https://mohaddis.com/View/";
+
+function mohaddis_Fix(book, number) {
+    switch (book) {
+        case "bukhari":
+            book = "Sahi-Bukhari";
+            break;
+        case "muslim":
+            break;
+        case "abudawud":
+            book = "Abu-Daud";
+            break;
+        case "tirmidhi":
+            book = "Tarimdhi";
+            break;
+        case "nasai":
+            book = "Sunan-nasai";
+            break;
+        case "ibnmajah":
+            book = "ibn-majah";
+            break;
+        default:
+            dayName = "Invalid Book";
+            break;
+    }
+    return `${site3}${book}/${number}`;
+}
 
 document.getElementById("urlForm").addEventListener("submit", function (e) {
     e.preventDefault();
@@ -10,12 +37,17 @@ document.getElementById("urlForm").addEventListener("submit", function (e) {
     if (book && numberInput) {
         const url1 = `${site1}${book}:${numberInput}`;
         const url2 = `${site2}${book}:${numberInput}`;
+        const url3 = mohaddis_Fix(book, numberInput);
+
         document.getElementById(
             "result"
         ).innerHTML = `<a href="${url1}" target="_blank">${url1}</a>`;
         document.getElementById(
             "result"
         ).innerHTML += `<br><br><a href="${url2}" target="_blank">${url2}</a>`;
+        document.getElementById(
+            "result"
+        ).innerHTML += `<br><br>Urdu: <a href="${url3}" target="_blank">${url3}</a>`;
     } else {
         document.getElementById("result").textContent =
             "Please provide both a text string and a number.";
