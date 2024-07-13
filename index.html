@@ -11,6 +11,17 @@
                 padding: 5px;
                 font-size: 14px;
             }
+            button {
+                padding: 5px;
+                margin: 5px 0px;
+                border-radius: 5px;
+            }
+            li {
+                margin: 7px 0px;
+            }
+            body {
+                background-color: rgb(255, 230, 210);
+            }
         </style>
     </head>
     <body>
@@ -44,7 +55,8 @@
                         Sunan Ad-Darimi (sunnah.com only)
                     </option>
                 </select>
-                <label for="lang"><b>Language:</b></label>
+                <br /><br />
+                <label for="lang"><b>Translation:</b></label>
                 <select id="lang" name="lang">
                     <option value="eng" selected>English</option>
                     <option value="ben">Bengali</option>
@@ -53,6 +65,7 @@
                     <option value="tur">Turkish</option>
                     <option value="urd">Urdu</option>
                 </select>
+                <br /><br />
                 <label for="diatrics">
                     <b>Diatrics:</b>
                     <select id="diatrics" name="diatrics">
@@ -91,7 +104,7 @@
             <h3
                 id="hadith"
                 style="
-                    background-color: beige;
+                    background-color: burlywood;
                     border-radius: 10px;
                     padding: 10px;
                 "
@@ -111,4 +124,11 @@
         </div>
         <script src="script.js"></script>
     </body>
+    <footer>
+        <hr />
+        Report issues or contribute here:
+        <a href="https://www.github.com/AfzGit/Quick-Hadith-Lookup">
+            https://www.github.com/AfzGit/Quick-Hadith-Lookup</a
+        >
+    </footer>
 </html>
