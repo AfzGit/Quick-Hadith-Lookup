@@ -4,6 +4,14 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Quick Hadith Lookup</title>
+        <style>
+            .small-input {
+                width: 312px;
+                height: 20px;
+                padding: 5px;
+                font-size: 14px;
+            }
+        </style>
     </head>
     <body>
         <div class="container">
@@ -57,6 +65,8 @@
                 <label for="numberInput"><b>Hadith Number:</b></label>
                 <input
                     type="number"
+                    class="small-input"
+                    placeholder="Number"
                     id="numberInput"
                     name="numberInput"
                     required
