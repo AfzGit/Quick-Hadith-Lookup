@@ -19,30 +19,70 @@
                 <label for="book">Book:</label>
                 <select id="book" name="book" required>
                     <option value="bukhari">Sahih Al-Bukhari</option>
-                    <option value="muslim">Sahih Muslim</option>
+                    <option value="muslim">
+                        Sahih Muslim (Avoid Sunnah.com)
+                    </option>
                     <option value="abudawud">Sunan Abi Dawud</option>
                     <option value="tirmidhi">Jami At-Tirmidhi</option>
                     <option value="nasai">Sunan An-Nasai</option>
                     <option value="ibnmajah">Sunan Ibn Majah</option>
                     <option value="malik">Muwatta Malik</option>
                     <option value="ahmad">Musnad Ahmed</option>
+                    <option value="nawawi">Forty Hadith (Nawawi)</option>
                     <option value="darimi">
                         Sunan Ad-Darimi (sunnah.com only)
                     </option>
                 </select>
+                <label for="lang">Language:</label>
+                <select id="lang" name="lang">
+                    <option value="eng" selected>English</option>
+                    <option value="ben">Bengali</option>
+                    <option value="ind">Indonesian</option>
+                    <option value="rus">Russian</option>
+                    <option value="tur">Turkish</option>
+                    <option value="urd">Urdu</option>
+                </select>
+                <label for="diatrics">
+                    Diatrics:
+                    <select id="diatrics" name="diatrics">
+                        <option value="true" selected>On</option>
+                        <option value="false">Off</option>
+                    </select>
+                </label>
                 <br />
                 <br />
-                <label for="numberInput">Number:</label>
+                <label for="numberInput">Hadith Number:</label>
                 <input
                     type="number"
                     id="numberInput"
                     name="numberInput"
                     required
                 />
+                <div id="buttons"></div>
                 <br /><br />
-                <button type="submit">Generate URL</button>
+                <button type="submit" style="padding: 10px">
+                    🔘 Get Hadith 🔘
+                </button>
             </form>
             <h3 id="result"></h3>
+            <h3
+                id="hadith"
+                style="
+                    background-color: beige;
+                    border-radius: 10px;
+                    padding: 10px;
+                "
+            ></h3>
+            <h4
+                id="copy-status"
+                style="
+                    background-color: greenyellow;
+                    border-radius: 10px;
+                    padding: 10px;
+                "
+            >
+                Clipboard
+            </h4>
         </div>
         <script src="script.js"></script>
     </body>
