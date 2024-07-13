@@ -2,7 +2,7 @@ const site1 = "https://sunnah.com/";
 const site2 = "https://hadithhub.com/";
 const site3 = "https://mohaddis.com/View/";
 
-let full, har, hen;
+let full, har, hen, harg, heng;
 let gradingsCopy = "";
 
 function copyToClipboard(textToCopy) {
@@ -37,7 +37,7 @@ async function gethadith(book, num, lang, diatrics) {
 
     try {
         // Fetch Arabic hadith
-        // "link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-abudawud1.json",
+        // "link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-abudawud.json",
 
         const arResponse = await fetch(
             `${url}ara-${book}${diatrics}/${num}.min.json`
@@ -57,6 +57,9 @@ async function gethadith(book, num, lang, diatrics) {
         if (enData.hadiths && arData.hadiths) {
             return {
                 en: enData.hadiths[0].text,
+                enName: enData.metadata.name,
+                enChap: enData.hadiths[0].reference.book,
+                enNum: enData.hadiths[0].reference.hadith,
                 ar: arData.hadiths[0].text,
                 grades: enData.hadiths[0].grades,
             };
@@ -131,27 +134,30 @@ document.getElementById("urlForm").addEventListener("submit", function (e) {
     gethadith(book, numberInput, lang, diatrics)
         .then((h) => {
             var gradings = "";
+            gradingsCopy = "";
             if (h.grades) {
                 h.grades.forEach((grade) => {
                     gradings += `<li>[${grade.grade}, ${grade.name}]</li>`;
-                    gradingsCopy += `- [${grade.grade}, ${grade.name}]\n`;
+                    gradingsCopy += ` (${grade.grade}, ${grade.name}) |`;
                 });
                 gradings += "<br>";
             }
 
+            // buttons to copy
+            hadithDetails = `${h.enName} #${h.enNum} (Chapter ${h.enChap})`;
+            har = `${h.ar}\n\n[${hadithDetails}]`;
+            hen = `${h.en}\n\n[${hadithDetails}]`;
+            full = `${h.ar}\n\n${h.en}\n\n[${hadithDetails}, Graded:${gradingsCopy}]`;
+            harg = `${h.ar}\n\n[${hadithDetails}, Graded:${gradingsCopy}]`;
+            heng = `${h.en}\n\n[${hadithDetails}, Graded:${gradingsCopy}]`;
+
             // print hadith
             document.getElementById(
                 "hadith"
-            ).innerHTML = `${h.ar} <br><br> ${h.en} <br><br> ${gradings}`;
+            ).innerHTML = `${hadithDetails}<br><br>${h.ar} <br><br>${h.en} <br><br>${gradings}`;
 
-            // buttons to copy
-            full = `${h.ar}\n\n${h.en}\n\n${gradingsCopy}`;
-            har = `${h.ar}`;
-            harg = `${h.ar}\n\n${gradingsCopy}`;
-            hen = `${h.en}`;
-            heng = `${h.en}\n\n${gradingsCopy}`;
-
-            copyToClipboard(full); // copy by default
+            // copy by default
+            copyToClipboard(full);
 
             // full button
             document.getElementById("hadith").innerHTML +=
