@@ -145,12 +145,22 @@ document.getElementById("urlForm").addEventListener("submit", function (e) {
             }
 
             // buttons to copy
-            hadithDetails = `${h.enName} #${h.enNum} (Chapter ${h.enChap}/${h.enChapHadith})`;
+            if (h.enChapHadith == "0") {
+                hadithDetails = `${h.enName} #${h.enNum}`;
+            } else {
+                hadithDetails = `${h.enName} #${h.enNum} (Chapter ${h.enChap}/${h.enChapHadith})`;
+            }
             har = `${h.ar}\n\n[${hadithDetails}]`;
             hen = `${h.en}\n\n[${hadithDetails}]`;
-            full = `${h.ar}\n\n${h.en}\n\n[${hadithDetails}, Graded:${gradingsCopy}]`;
-            harg = `${h.ar}\n\n[${hadithDetails}, Graded:${gradingsCopy}]`;
-            heng = `${h.en}\n\n[${hadithDetails}, Graded:${gradingsCopy}]`;
+            if (gradingsCopy == "") {
+                full = `${h.ar}\n\n${h.en}\n\n[${hadithDetails}]`;
+                harg = `${h.ar}\n\n[${hadithDetails}]`;
+                heng = `${h.en}\n\n[${hadithDetails}]`;
+            } else {
+                full = `${h.ar}\n\n${h.en}\n\n[${hadithDetails}, Graded:${gradingsCopy}]`;
+                harg = `${h.ar}\n\n[${hadithDetails}, Graded:${gradingsCopy}]`;
+                heng = `${h.en}\n\n[${hadithDetails}, Graded:${gradingsCopy}]`;
+            }
 
             // print hadith
             document.getElementById(
