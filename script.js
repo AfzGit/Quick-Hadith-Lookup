@@ -113,7 +113,7 @@ document.getElementById("urlForm").addEventListener("submit", function (e) {
     // add increment and decrement buttons
     document.getElementById(
         "buttons"
-    ).innerHTML = `<button type="submit" onclick="document.getElementById('numberInput').value = parseInt(document.getElementById('numberInput').value) - 1;" > Prev </button> <button type="submit" onclick="document.getElementById('numberInput').value = parseInt(document.getElementById('numberInput').value) + 1;" > Next </button>`;
+    ).innerHTML = `<button type="submit" onclick="document.getElementById('numberInput').value = parseInt(document.getElementById('numberInput').value) - 1;" > Prev </button> - <button type="submit" onclick="document.getElementById('numberInput').value = parseInt(document.getElementById('numberInput').value) + 1;" > Next </button>`;
 
     // sunnahCom
     document.getElementById(
@@ -138,7 +138,7 @@ document.getElementById("urlForm").addEventListener("submit", function (e) {
             if (h.grades) {
                 h.grades.forEach((grade) => {
                     gradings += `<li>[${grade.grade}, ${grade.name}]</li>`;
-                    gradingsCopy += ` (${grade.grade}, ${grade.name}) |`;
+                    gradingsCopy += ` (${grade.grade}, ${grade.name})`;
                 });
                 gradings += "<br>";
             }
