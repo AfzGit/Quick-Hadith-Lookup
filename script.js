@@ -59,7 +59,7 @@ async function gethadith(book, num, lang, diatrics) {
                 en: enData.hadiths[0].text,
                 enName: enData.metadata.name,
                 enChap: enData.hadiths[0].reference.book,
-                enNum: enData.hadiths[0].reference.hadith,
+                enNum: enData.hadiths[0].hadithnumber,
                 ar: arData.hadiths[0].text,
                 grades: enData.hadiths[0].grades,
             };
