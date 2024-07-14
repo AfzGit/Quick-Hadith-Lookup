@@ -1,8 +1,7 @@
 # Quick-Hadith-Lookup
 
-Quickly copy and retreive the hadith.
+Quickly copy and retreive the Ahadith.
 
 Website: https://afzgit.github.io/Quick-Hadith-Lookup/
 
--   todos:
-    -   implement search
+All data is taken from (Hadith-API)[https://github.com/fawazahmed0/hadith-api]
