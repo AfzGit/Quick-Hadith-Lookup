@@ -39,12 +39,14 @@ async function gethadith(book, num, lang, diatrics) {
         // Fetch Arabic hadith
         // "link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-abudawud.json",
 
+        // error throwing
         if (diatrics == "1" && book == "nawawi") {
             throw new Error("Diatrics must be ON for this book");
         }
         if ((book == "ahmad") | (book == "darimi")) {
             throw new Error("Book not available");
         }
+
         const arResponse = await fetch(
             `${url}ara-${book}${diatrics}/${num}.min.json`
         );
@@ -52,6 +54,11 @@ async function gethadith(book, num, lang, diatrics) {
             throw new Error("Failed to fetch Arabic Hadith");
         }
         const arData = await arResponse.json();
+
+        // error throwing 2
+        if (book == "muslim" && arData.hadiths[0].text == "") {
+            throw new Error("Hadith is Blank in Hadith-API. Try sunnah.com");
+        }
 
         // Fetch hadith in specified language
         const enResponse = await fetch(`${url}${lang}-${book}/${num}.min.json`);
@@ -224,6 +231,6 @@ document.getElementById("urlForm").addEventListener("submit", function (e) {
             } else
                 document.getElementById(
                     "hadith"
-                ).innerHTML += `${error}.<br> Failed to get hadith ${numberInput} of ${book} in ${lang}.<br><br>Potential Culprits:<br>- Network/Website problem<br>- Hadith Number is incorrect<br>- The hadith is not available in the Hadith-API<br>- Hadith is not available in the language ${lang}<br><br>Try the Urls above instead.`;
+                ).innerHTML += `${error}.<br><br> Failed to get hadith ${numberInput} of ${book} in ${lang}.<br><br>Potential Culprits:<br>- Network/Website problem<br>- Hadith Number is incorrect<br>- The hadith is not available in the Hadith-API<br>- Hadith is not available in the language ${lang}<br><br>Try the Urls above instead.`;
         });
 });
