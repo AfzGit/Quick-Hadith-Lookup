@@ -137,6 +137,7 @@ document.getElementById("urlForm").addEventListener("submit", function (e) {
             var gradings = "";
             gradingsCopy = "";
             if (h.grades) {
+                gradings += `<br>`;
                 h.grades.forEach((grade) => {
                     gradings += `<li>[${grade.grade}, ${grade.name}]</li>`;
                     gradingsCopy += ` (${grade.grade}, ${grade.name})`;
@@ -174,17 +175,27 @@ document.getElementById("urlForm").addEventListener("submit", function (e) {
             document.getElementById("hadith").innerHTML +=
                 "<button onclick='copyToClipboard(full)'>Copy Full</button>";
 
-            // Gradings button
-            document.getElementById("hadith").innerHTML +=
-                "<li><button onclick='copyToClipboard(gradingsCopy)'>Copy Gradings</button>";
+            if (!gradingsCopy == "") {
+                // Gradings button
+                document.getElementById("hadith").innerHTML +=
+                    "<li><button onclick='copyToClipboard(gradingsCopy)'>Copy Gradings</button></li>";
 
-            // Arabic button
-            document.getElementById("hadith").innerHTML +=
-                "<li><button onclick='copyToClipboard(har)'>Copy Arabic</button> - <button onclick='copyToClipboard(harg)'>Copy Arabic + Gradings</button></li>";
+                // Arabic button
+                document.getElementById("hadith").innerHTML +=
+                    "<li><button onclick='copyToClipboard(har)'>Copy Arabic</button> - <button onclick='copyToClipboard(harg)'>Copy Arabic + Gradings</button></li>";
 
-            // English button
-            document.getElementById("hadith").innerHTML +=
-                "<li><button onclick='copyToClipboard(hen)'>Copy Translation</button> - <button onclick='copyToClipboard(heng)'>Copy Translation + Gradings</button>";
+                // English button
+                document.getElementById("hadith").innerHTML +=
+                    "<li><button onclick='copyToClipboard(hen)'>Copy Translation</button> - <button onclick='copyToClipboard(heng)'>Copy Translation + Gradings</button>";
+            } else {
+                // Arabic button
+                document.getElementById("hadith").innerHTML +=
+                    "<li><button onclick='copyToClipboard(har)'>Copy Arabic</button></li>";
+
+                // English button
+                document.getElementById("hadith").innerHTML +=
+                    "<li><button onclick='copyToClipboard(hen)'>Copy Translation</button></li>";
+            }
         })
         .catch((error) => {
             console.error("Error fetching data:", error);
