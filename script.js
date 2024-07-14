@@ -102,6 +102,15 @@ function mohaddis_Fix(book, number) {
     return `${site3}${book}/${number}`;
 }
 
+function hadithHub_Fix(book, number) {
+    switch (book) {
+        case "ahmad":
+            book = "musnadahamad";
+            break;
+    }
+    return `${site2}${book}:${number}`;
+}
+
 // MAIN
 document.getElementById("urlForm").addEventListener("submit", function (e) {
     e.preventDefault();
@@ -114,7 +123,7 @@ document.getElementById("urlForm").addEventListener("submit", function (e) {
 
     // url fixes
     const url1 = `${site1}${book}:${numberInput}`;
-    const url2 = `${site2}${book}:${numberInput}`;
+    const url2 = hadithHub_Fix(book, numberInput);
     const url3 = mohaddis_Fix(book, numberInput);
 
     // add increment and decrement buttons
@@ -130,7 +139,7 @@ document.getElementById("urlForm").addEventListener("submit", function (e) {
     // HadithHub
     document.getElementById(
         "result"
-    ).innerHTML += `<li><a href="${url2}" target="_blank">${url2}</a> (Has many languages)</li>`;
+    ).innerHTML += `<li><a href="${url2}" target="_blank">${url2}</a></li>`;
 
     // Mohaddis
     document.getElementById(
