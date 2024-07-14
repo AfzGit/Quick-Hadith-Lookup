@@ -39,6 +39,12 @@ async function gethadith(book, num, lang, diatrics) {
         // Fetch Arabic hadith
         // "link": "https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/ara-abudawud.json",
 
+        if (diatrics == "1" && book == "nawawi") {
+            throw new Error("Diatrics must be ON for this book");
+        }
+        if ((book == "ahmad") | (book == "darimi")) {
+            throw new Error("Book not available");
+        }
         const arResponse = await fetch(
             `${url}ara-${book}${diatrics}/${num}.min.json`
         );
@@ -199,8 +205,16 @@ document.getElementById("urlForm").addEventListener("submit", function (e) {
         })
         .catch((error) => {
             console.error("Error fetching data:", error);
-            document.getElementById(
-                "hadith"
-            ).innerHTML = `Failed to get hadith ${numberInput} of ${book} in ${lang}`;
+            document.getElementById("hadith").innerHTML = "";
+            if ((book == "ahmad") | (book == "darimi")) {
+                document.getElementById(
+                    "hadith"
+                ).innerHTML += `Book ${book} is not available`;
+            } else if (book == "nawawi") {
+                document.getElementById("hadith").innerHTML += error;
+            } else
+                document.getElementById(
+                    "hadith"
+                ).innerHTML += `Failed to get hadith ${numberInput} of ${book} in ${lang}. Could be a Network/Website problem or maybe the hadith may not be available in the Hadith-API`;
         });
 });
