@@ -13,7 +13,7 @@ function copyToClipboard(textToCopy) {
             const printCopy = textToCopy.replace(/\n/g, "<br>");
             document.getElementById(
                 "copy-status"
-            ).innerHTML = `✅📋 Copied to Clipboard:<hr>${printCopy}`;
+            ).innerHTML = `✅📋 Copied to Clipboard:<hr class="black-hr"><br>${printCopy}`;
         })
         .catch((err) => {
             console.error("Error copying text: ", err);
@@ -189,7 +189,7 @@ document.getElementById("urlForm").addEventListener("submit", function (e) {
             // print hadith
             document.getElementById(
                 "hadith"
-            ).innerHTML = `${hadithDetails}<hr>${h.ar} <br><br>${h.en} <br>${gradings}<hr>`;
+            ).innerHTML = `${hadithDetails}<hr class="black-hr"><br>${h.ar} <br><br>${h.en} <br>${gradings}<hr class="black-hr">`;
 
             // copy by default
             copyToClipboard(full);
