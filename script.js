@@ -169,9 +169,9 @@ document.getElementById("urlForm").addEventListener("submit", function (e) {
 
             // buttons to copy
             if (h.enChapHadith == "0") {
-                hadithDetails = `${h.enName} #${h.enNum}`;
+                hadithDetails = `${h.enName} ${h.enNum}`;
             } else {
-                hadithDetails = `${h.enName} #${h.enNum} (Chapter ${h.enChap}/${h.enChapHadith})`;
+                hadithDetails = `${h.enName} ${h.enNum} (Chapter ${h.enChap}/${h.enChapHadith})`;
             }
             har = `${h.ar}\n\n[${hadithDetails}]`;
             hen = `${h.en}\n\n[${hadithDetails}]`;
