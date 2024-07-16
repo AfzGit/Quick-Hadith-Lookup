@@ -232,6 +232,6 @@ document.getElementById("urlForm").addEventListener("submit", function (e) {
             } else
                 document.getElementById(
                     "hadith"
-                ).innerHTML += `${error}.<br><br> Failed to get hadith ${numberInput} of ${book} in ${lang}.<br><br>Potential Culprits:<br>- Network/Website problem<br>- Hadith Number is incorrect<br>- The hadith is not available in the Hadith-API<br>- Hadith is not available in the language ${lang}<br><br>Try the <a href="#results">Urls below</a> instead.`;
+                ).innerHTML += `${error}.<br><br> Failed to get hadith ${numberInput} of ${book} in ${lang}.<br><br>Potential Culprits:<br>- Network/Website problem<br>- Hadith Number is incorrect<br>- The hadith is not available in the Hadith-API<br>- Hadith is not available in the language ${lang}<br><br>Try the <a href="#result">Urls below</a> instead.`;
         });
 });
