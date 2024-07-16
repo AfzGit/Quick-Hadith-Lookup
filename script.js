@@ -189,7 +189,7 @@ document.getElementById("urlForm").addEventListener("submit", function (e) {
             // print hadith
             document.getElementById(
                 "hadith"
-            ).innerHTML = `${hadithDetails}<br><br>${h.ar} <br><br>${h.en} <br>${gradings}`;
+            ).innerHTML = `${hadithDetails}<hr>${h.ar} <br><br>${h.en} <br>${gradings}<hr>`;
 
             // copy by default
             copyToClipboard(full);
