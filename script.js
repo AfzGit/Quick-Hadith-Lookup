@@ -13,7 +13,7 @@ function copyToClipboard(textToCopy) {
             const printCopy = textToCopy.replace(/\n/g, "<br>");
             document.getElementById(
                 "copy-status"
-            ).innerHTML = `✅📋 Copied to Clipboard:<hr class="black-hr"><br>${printCopy}`;
+            ).innerHTML = `✅📋 Copied to Clipboard:<hr class="black-hr">${printCopy}<hr class="black-hr">`;
         })
         .catch((err) => {
             console.error("Error copying text: ", err);
