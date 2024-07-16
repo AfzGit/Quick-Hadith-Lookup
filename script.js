@@ -2,6 +2,8 @@ const site1 = "https://sunnah.com/";
 const site2 = "https://hadithhub.com/";
 const site3 = "https://mohaddis.com/View/";
 
+const jump = `<a href="#hadith">Hadith</a> - <a href="#copy-status">Clipboard</a> - <a href="#result">Urls</a>`;
+
 let full, har, hen, harg, heng;
 let gradingsCopy = "";
 
@@ -219,6 +221,13 @@ document.getElementById("urlForm").addEventListener("submit", function (e) {
                 document.getElementById("hadith").innerHTML +=
                     "<li><button onclick='copyToClipboard(hen)'>Copy Translation</button></li>";
             }
+            // jumpers top and bottom
+            document.getElementById(
+                "buttons"
+            ).innerHTML += `<br><br>Jump to: ${jump} - <a href="#jump-bottom">Bottom</a>`;
+            document.getElementById(
+                "jump-bottom"
+            ).innerHTML = `Jump To: ${jump} - <a href="#">Top</a>`;
         })
         .catch((error) => {
             console.error("Error fetching data:", error);
