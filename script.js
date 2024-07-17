@@ -187,7 +187,7 @@ document.getElementById("urlForm").addEventListener("submit", function (e) {
     // add increment and decrement buttons
     document.getElementById(
         "buttons"
-    ).innerHTML = `<button type="submit" onclick="document.getElementById('numberInput').value = parseInt(document.getElementById('numberInput').value) - 1;" > Prev </button> - <button type="submit" onclick="document.getElementById('numberInput').value = parseInt(document.getElementById('numberInput').value) + 1;" > Next </button>`;
+    ).innerHTML = `<button type="submit" onclick="document.getElementById('numberInput').value = parseInt(document.getElementById('numberInput').value) - 1;" >⬅️ Prev </button> - <button type="submit" onclick="document.getElementById('numberInput').value = parseInt(document.getElementById('numberInput').value) + 1;" > Next ➡️</button>`;
 
     // URLs
     document.getElementById("result").innerHTML = `URLs:<hr class='black-hr'>`;
