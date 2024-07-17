@@ -1,7 +1,3 @@
-@font-face {
-    font-family: "Uthman Taha Naskh";
-    src: url("./KFGQPC Uthman Taha Naskh Regular.ttf") format("truetype");
-}
 .small-input {
     width: 312px;
     height: 20px;
@@ -25,10 +21,9 @@ html {
     background: black;
 }
 .arabic {
-    font-size: 30px;
+    font-size: 25px;
     text-align: justify;
     text-align-last: right;
-    font-family: "Uthman Taha Naskh", serif;
 }
 h3 {
     border: 3px solid black; /* Border style */
