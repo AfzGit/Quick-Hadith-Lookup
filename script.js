@@ -142,7 +142,7 @@ document.getElementById("urlForm").addEventListener("submit", function (e) {
     ).innerHTML = `<button type="submit" onclick="document.getElementById('numberInput').value = parseInt(document.getElementById('numberInput').value) - 1;" > Prev </button> - <button type="submit" onclick="document.getElementById('numberInput').value = parseInt(document.getElementById('numberInput').value) + 1;" > Next </button>`;
 
     // URLs
-    document.getElementById("result").innerHTML += `URLs:<hr class='black-hr'>`;
+    document.getElementById("result").innerHTML = `URLs:<hr class='black-hr'>`;
 
     // sunnahCom
     document.getElementById(
