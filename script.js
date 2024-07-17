@@ -159,6 +159,14 @@ document.getElementById("urlForm").addEventListener("submit", function (e) {
         "result"
     ).innerHTML += `<li>Mohaddis: <a href="${url3}" target="_blank">${book} ${numberInput}</a></li>`;
 
+    // jumpers top and bottom
+    document.getElementById(
+        "jump-top"
+    ).innerHTML = `<br>Jump to: ${jump} - <a href="#jump-bottom">Bottom</a>`;
+    document.getElementById(
+        "jump-bottom"
+    ).innerHTML = `Jump To: ${jump} - <a href="#">Top</a>`;
+
     // hadith with grading
     gethadith(book, numberInput, lang, diatrics)
         .then((h) => {
@@ -224,13 +232,6 @@ document.getElementById("urlForm").addEventListener("submit", function (e) {
                 document.getElementById("hadith").innerHTML +=
                     "<li><button onclick='copyToClipboard(hen)'>Copy Translation</button></li>";
             }
-            // jumpers top and bottom
-            document.getElementById(
-                "buttons"
-            ).innerHTML += `<br><br>Jump to: ${jump} - <a href="#jump-bottom">Bottom</a>`;
-            document.getElementById(
-                "jump-bottom"
-            ).innerHTML = `Jump To: ${jump} - <a href="#">Top</a>`;
         })
         .catch((error) => {
             console.error("Error fetching data:", error);
