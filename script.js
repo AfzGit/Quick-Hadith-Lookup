@@ -242,7 +242,7 @@ document.getElementById("urlForm").addEventListener("submit", function (e) {
             // print hadith
             document.getElementById(
                 "hadith"
-            ).innerHTML = `${hadithDetails}<hr class="black-hr"><br>${h.ar} <br><br>${h.en} <br>${gradings}<hr class="black-hr">`;
+            ).innerHTML = `${hadithDetails}<hr class="black-hr"><p class="arabic">${h.ar}</p> <br>${h.en} <br>${gradings}<hr class="black-hr">`;
 
             // copy by default
             copyToClipboard(full);

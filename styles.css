@@ -1,3 +1,7 @@
+@font-face {
+    font-family: "Uthman Taha Naskh";
+    src: url("./KFGQPC Uthman Taha Naskh Regular.ttf") format("truetype");
+}
 .small-input {
     width: 312px;
     height: 20px;
@@ -20,8 +24,13 @@ html {
     border-color: black;
     background: black;
 }
-h3,
-h4 {
+.arabic {
+    font-size: 30px;
+    text-align: justify;
+    text-align-last: right;
+    font-family: "Uthman Taha Naskh", serif;
+}
+h3 {
     border: 3px solid black; /* Border style */
     padding: 10px;
     text-align: justify;
@@ -29,36 +38,31 @@ h4 {
 }
 /* Styles for desktop screens */
 @media (min-width: 700px) {
-    h3,
-    h4 {
+    h3 {
         margin-right: 10%;
         margin-left: 10%;
     }
 }
 @media (min-width: 1000px) {
-    h3,
-    h4 {
+    h3 {
         margin-right: 35%;
         margin-left: auto;
     }
 }
 @media (min-width: 1200px) {
-    h3,
-    h4 {
+    h3 {
         margin-right: 45%;
         margin-left: auto;
     }
 }
 @media (min-width: 1400px) {
-    h3,
-    h4 {
+    h3 {
         margin-right: 55%;
         margin-left: auto;
     }
 }
 @media (min-width: 1600px) {
-    h3,
-    h4 {
+    h3 {
         margin-right: 60%;
         margin-left: auto;
     }
