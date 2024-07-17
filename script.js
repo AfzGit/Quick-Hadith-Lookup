@@ -2,7 +2,7 @@ const site1 = "https://sunnah.com/";
 const site2 = "https://hadithhub.com/";
 const site3 = "https://mohaddis.com/View/";
 
-const jump = `<a href="#hadith">Hadith</a> - <a href="#copy-status">Clipboard</a> - <a href="#result">Urls</a>`;
+const jump = `<a href="#hadith">Hadith</a> - <a href="#copy-status">Clipboard</a> - <a href="#result">URLs</a>`;
 
 let full, har, hen, harg, heng;
 let gradingsCopy = "";
@@ -141,20 +141,23 @@ document.getElementById("urlForm").addEventListener("submit", function (e) {
         "buttons"
     ).innerHTML = `<button type="submit" onclick="document.getElementById('numberInput').value = parseInt(document.getElementById('numberInput').value) - 1;" > Prev </button> - <button type="submit" onclick="document.getElementById('numberInput').value = parseInt(document.getElementById('numberInput').value) + 1;" > Next </button>`;
 
+    // URLs
+    document.getElementById("result").innerHTML += `URLs:<hr class='black-hr'>`;
+
     // sunnahCom
     document.getElementById(
         "result"
-    ).innerHTML = `<li><a href="${url1}" target="_blank">${url1}</a></li>`;
+    ).innerHTML += `<li>Sunnah.com: <a href="${url1}" target="_blank">${book} ${numberInput}</a></li>`;
 
     // HadithHub
     document.getElementById(
         "result"
-    ).innerHTML += `<li><a href="${url2}" target="_blank">${url2}</a></li>`;
+    ).innerHTML += `<li>HadithHub: <a href="${url2}" target="_blank">${book} ${numberInput}</a></li>`;
 
     // Mohaddis
     document.getElementById(
         "result"
-    ).innerHTML += `<li>Urdu: <a href="${url3}" target="_blank">${url3}</a></li>`;
+    ).innerHTML += `<li>Mohaddis: <a href="${url3}" target="_blank">${book} ${numberInput}</a></li>`;
 
     // hadith with grading
     gethadith(book, numberInput, lang, diatrics)
@@ -241,6 +244,6 @@ document.getElementById("urlForm").addEventListener("submit", function (e) {
             } else
                 document.getElementById(
                     "hadith"
-                ).innerHTML += `${error}.<br><br> Failed to get hadith ${numberInput} of ${book} in ${lang}.<br><br>Potential Culprits:<br>- Network/Website problem<br>- Hadith Number is incorrect<br>- The hadith is not available in the Hadith-API<br>- Hadith is not available in the language ${lang}<br><br>Try the <a href="#result">Urls below</a> instead.`;
+                ).innerHTML += `${error}.<br><br> Failed to get hadith ${numberInput} of ${book} in ${lang}.<br><br>Potential Culprits:<br>- Network/Website problem<br>- Hadith Number is incorrect<br>- The hadith is not available in the Hadith-API<br>- Hadith is not available in the language ${lang}<br><br>Try the <a href="#result">URLs below</a> instead.`;
         });
 });
