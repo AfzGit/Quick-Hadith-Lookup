@@ -9,14 +9,12 @@ let gradingsCopy = "";
 document.addEventListener("keydown", function (event) {
     if (event.key === "i") {
         document.getElementById("urlForm").scrollIntoView();
-    } else if (event.key === "q") {
-        document.getElementById("quran").scrollIntoView();
-    } else if (event.key === "t") {
-        document.getElementById("tafsir-print").scrollIntoView();
-    } else if (event.key === "u") {
-        document.getElementById("result").scrollIntoView();
+    } else if (event.key === "h") {
+        document.getElementById("hadith").scrollIntoView();
     } else if (event.key === "c") {
         document.getElementById("copy-status").scrollIntoView();
+    } else if (event.key === "u") {
+        document.getElementById("result").scrollIntoView();
     }
 });
 
