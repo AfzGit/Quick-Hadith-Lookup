@@ -4,75 +4,19 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Quick Hadith Lookup</title>
-        <style>
-            .small-input {
-                width: 312px;
-                height: 20px;
-                padding: 5px;
-                font-size: 14px;
-            }
-            button {
-                padding: 5px;
-                margin: 5px 0px;
-                border-radius: 5px;
-            }
-            li {
-                margin: 7px 0px;
-            }
-            html {
-                background-color: rgb(255, 230, 210);
-                margin-bottom: 20%;
-            }
-            .black-hr {
-                border-color: black;
-                background: black;
-            }
-            h3,
-            h4 {
-                border: 3px solid black; /* Border style */
-                padding: 10px;
-                text-align: justify;
-                border-radius: 10px;
-            }
-            /* Styles for desktop screens */
-            @media (min-width: 700px) {
-                h3,
-                h4 {
-                    margin-right: 10%;
-                    margin-left: 10%;
-                }
-            }
-            @media (min-width: 1000px) {
-                h3,
-                h4 {
-                    margin-right: 35%;
-                    margin-left: auto;
-                }
-            }
-            @media (min-width: 1200px) {
-                h3,
-                h4 {
-                    margin-right: 45%;
-                    margin-left: auto;
-                }
-            }
-            @media (min-width: 1400px) {
-                h3,
-                h4 {
-                    margin-right: 55%;
-                    margin-left: auto;
-                }
-            }
-            @media (min-width: 1600px) {
-                h3,
-                h4 {
-                    margin-right: 60%;
-                    margin-left: auto;
-                }
-            }
-        </style>
+        <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
+        <div class="toc-icon" id="tocIcon">&#9776;</div>
+        <div class="toc" id="toc">
+            <ul>
+                <li><a href="#urlForm">Search</a></li>
+                <li><a href="#hadith">Hadith</a></li>
+                <li><a href="#tafsir-print">Tafsir</a></li>
+                <li><a href="#copy-status">Clipboard</a></li>
+                <li><a href="#result">URLs</a></li>
+            </ul>
+        </div>
         <div class="container">
             <h1>Quick Hadith Lookup</h1>
             <p>
@@ -80,6 +24,7 @@
                 <a href="https://afzgit.github.io/Quick-Quran-Ayah-Lookup/"
                     >Quick Quran Ayah Lookup</a
                 >
+                <br />Keyboard shortcuts: Press key I, H, C or U
             </p>
             <form id="urlForm">
                 <hr />
@@ -132,19 +77,18 @@
                     required
                 />
                 <br /><br />
+                <div id="notification"></div>
                 <button type="submit" style="padding: 10px">
                     🔘 Get Hadith 🔘
                 </button>
                 <hr />
                 <div id="buttons"></div>
-                <div id="jump-top"></div>
             </form>
             <h3 id="hadith" style="background-color: burlywood">Hadith:</h3>
             <h4 id="copy-status" style="background-color: darkgoldenrod">
                 Clipboard:
             </h4>
             <h3 id="result" style="background-color: rosybrown">URLs:</h3>
-            <p id="jump-bottom"></p>
         </div>
         <script src="script.js"></script>
     </body>
