@@ -7,7 +7,7 @@ let gradingsCopy = "";
 
 // keyboard shortcuts
 document.addEventListener("keydown", function (event) {
-    if (event.key === "i") {
+    if (event.key === "s") {
         document.getElementById("urlForm").scrollIntoView();
     } else if (event.key === "h") {
         document.getElementById("hadith").scrollIntoView();
