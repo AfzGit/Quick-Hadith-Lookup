@@ -31,6 +31,25 @@ h3 {
     text-align: justify;
     border-radius: 10px;
 }
+#book {
+    font-size: 15px;
+    overflow-y: auto;
+    border-radius: 20px;
+    border-width: 5px;
+    cursor: grab;
+}
+#book option {
+    padding: 5px;
+    font-weight: bold;
+}
+#book option:checked {
+    background-color: rgba(50, 100, 255, 0.5);
+    font-weight: bolder;
+    cursor: grabbing;
+    text-align: center;
+    transition-duration: 200ms;
+}
+
 /* Styles for desktop screens */
 @media (min-width: 700px) {
     h3 {
