@@ -92,7 +92,7 @@ async function gethadith(book, num, lang, diatrics) {
 
         // error throwing
         if (diatrics == "1" && book == "nawawi") {
-            throw new Error("Diatrics must be ON for this book");
+            throw new Error("Diacritics must be [ON] for this book");
         }
         if ((book == "ahmad") | (book == "darimi")) {
             throw new Error("Book not available");
